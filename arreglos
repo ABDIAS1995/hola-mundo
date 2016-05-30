@@ -1,0 +1,65 @@
+import java.util.Scanner;
+
+public class EjerciciosdeBilletes {
+
+    public static void main(String[] args) {
+        Scanner tec = new Scanner(System.in);
+
+        int b200, b100, b50, b20, b10, m5, m2, m1, m05, m02, m01;
+        int partedecimal, parteentera;
+        double monto, decimal;
+        System.out.println("ingrese monto");
+        monto = tec.nextDouble();
+        parteentera = (int) monto;
+        decimal = monto - parteentera;
+
+        b200 = parteentera / 200;
+        parteentera = parteentera % 200;
+
+        b100 = parteentera / 100;
+        parteentera = parteentera % 100;
+
+        b50 = parteentera / 50;
+        parteentera = parteentera % 50;
+
+        b20 = parteentera / 20;
+        parteentera = parteentera % 20;
+
+        b10 = parteentera / 10;
+        parteentera = parteentera % 10;
+
+        // ahora buscamos monedas
+        m5 = parteentera / 5;
+        parteentera = parteentera % 5;
+
+        m2 = parteentera / 2;
+        parteentera = parteentera % 2;
+
+        m1 = parteentera;
+
+        // monedas menores
+        partedecimal = (int) (decimal * 1000 + 0.5);
+
+        m05 = partedecimal / 500;
+        partedecimal = partedecimal % 500;
+
+        m02 = partedecimal / 200;
+        partedecimal = partedecimal % 200;
+        m01 = partedecimal / 100;
+        partedecimal = partedecimal % 100;
+
+        System.out.println(" billetes tomados de 200 soles son :  " + b200);
+        System.out.println(" billetes tomados de 100 soles son :  " + b100);
+        System.out.println(" billetes tomados de 50 soles son :  " + b50);
+        System.out.println(" billetes tomados de 20 soles son :  " + b20);
+        System.out.println(" billetes tomados de 10 soles son :  " + b10);
+        System.out.println(" monedas tomados de 5 soles son :  " + m5);
+        System.out.println(" monedas tomados de 2 soles son :  " + m2);
+        System.out.println(" monedas tomados de 1 soles son :  " + m1);
+        System.out.println(" monedas tomados de 50 centimos son :  " + m05);
+        System.out.println(" monedas tomados de 20 centimos son :  " + m02);
+        System.out.println(" monedas tomados de 10 centimos son :  " + m01);
+
+    }
+
+}
